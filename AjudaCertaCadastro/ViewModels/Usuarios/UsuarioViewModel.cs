@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace AjudaCertaCadastro.ViewModels
+namespace AjudaCertaCadastro.ViewModels.Usuarios
 {
     public class UsuarioViewModel : BaseViewModel
     {
@@ -23,7 +23,6 @@ namespace AjudaCertaCadastro.ViewModels
         public UsuarioViewModel()
         {
             uService = new UsuarioService();
-            pService = new PessoaService();
             _ = ObterTipoPessoas();
             _ = ObterFisicaJuridica();
             InicializarCommands();
@@ -37,8 +36,10 @@ namespace AjudaCertaCadastro.ViewModels
         #region AtributosPropriedades
 
         private string login = string.Empty;
-        public string Login { get { return login; }
-            set 
+        public string Login
+        {
+            get { return login; }
+            set
             {
                 login = value;
                 OnPropertyChanged();
@@ -46,7 +47,9 @@ namespace AjudaCertaCadastro.ViewModels
         }
 
         private string senha = string.Empty;
-        public string Senha { get { return senha; }
+        public string Senha
+        {
+            get { return senha; }
             set
             {
                 senha = value;
@@ -54,8 +57,10 @@ namespace AjudaCertaCadastro.ViewModels
             }
         }
         private string nome = string.Empty;
-        public string Nome { get { return nome; }
-            set 
+        public string Nome
+        {
+            get { return nome; }
+            set
             {
                 nome = value;
                 OnPropertyChanged();
@@ -69,30 +74,36 @@ namespace AjudaCertaCadastro.ViewModels
             set
             {
                 documento = value;
-                OnPropertyChanged();    
+                OnPropertyChanged();
             }
         }
 
         private string telefone = string.Empty;
-        public string Telefone { get { return telefone; }
-            set 
+        public string Telefone
+        {
+            get { return telefone; }
+            set
             {
                 telefone = value;
                 OnPropertyChanged();
-            } 
+            }
         }
 
         private DateTime datanasc = DateTime.MinValue;
-        public DateTime Datanasc { get { return datanasc; } 
-            set 
+        public DateTime Datanasc
+        {
+            get { return datanasc; }
+            set
             {
                 datanasc = value;
                 OnPropertyChanged();
-            } 
+            }
         }
 
         private string genero = string.Empty;
-        public string Genero {   get { return genero; }
+        public string Genero
+        {
+            get { return genero; }
             set
             {
                 genero = value;
@@ -101,10 +112,12 @@ namespace AjudaCertaCadastro.ViewModels
         }
 
         private ObservableCollection<TipoPessoa> listaTipoPessoa;
-        public ObservableCollection<TipoPessoa> ListaTipoPessoa { get { return listaTipoPessoa; }
-            set 
+        public ObservableCollection<TipoPessoa> ListaTipoPessoa
+        {
+            get { return listaTipoPessoa; }
+            set
             {
-                if(value != null)
+                if (value != null)
                 {
                     listaTipoPessoa = value;
                     OnPropertyChanged();
@@ -113,10 +126,12 @@ namespace AjudaCertaCadastro.ViewModels
         }
 
         private TipoPessoa tipoPessoaSelecionado;
-        public TipoPessoa TipoPessoaSelecionado { get { return tipoPessoaSelecionado; }
-            set 
+        public TipoPessoa TipoPessoaSelecionado
+        {
+            get { return tipoPessoaSelecionado; }
+            set
             {
-                if( value != null)
+                if (value != null)
                 {
                     tipoPessoaSelecionado = value;
                     OnPropertyChanged();
@@ -203,12 +218,20 @@ namespace AjudaCertaCadastro.ViewModels
                 p.fisicaJuridica = (FisicaJuridicaEnum)fisicaJuridicaSelecionado.Id;
 
                 Usuario uRegistrado = await uService.PostRegistrarUsuarioAsync(u);
+
+                Preferences.Set("UsuarioId", uRegistrado.Id);
+                Preferences.Set("UsuarioEmail", uRegistrado.Email);
+                Preferences.Set("UsuarioToken", uRegistrado.Token);
+
+                string token = Preferences.Get("UsuarioToken", string.Empty);
+                pService = new PessoaService(token);
+
                 Pessoa pRegistrado = await pService.PostRegistrarPessoaAsync(p);
                 if (uRegistrado.Id != 0 && pRegistrado.Id != 0)
                 {
                     string mensagem = $"Usuário Id {uRegistrado.Id} registrado com sucesso.";
                     await Application.Current.MainPage.DisplayAlert("Informação", mensagem, "Ok");
-                
+
                     await Application.Current.MainPage
                         .Navigation.PopAsync();
                 }
@@ -230,7 +253,7 @@ namespace AjudaCertaCadastro.ViewModels
 
                 Usuario uAutenticado = await uService.PostAutenticarUsuarioAsync(u);
 
-                if(!string.IsNullOrEmpty(uAutenticado.Token))
+                if (!string.IsNullOrEmpty(uAutenticado.Token))
                 {
                     string mensagem = $"Bem-vindo(a) {uAutenticado.Email}";
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\AjudaCertaCadastro\\AjudaCertaCadastro\\AjudaCertaCadastro.csproj": {}
+    "C:\\Projetos\\AjudaCertaTCC\\CadastroComClassePessoa\\AjudaCertaCadastro\\AjudaCertaCadastro.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\AjudaCertaCadastro\\AjudaCertaCadastro\\AjudaCertaCadastro.csproj": {
+    "C:\\Projetos\\AjudaCertaTCC\\CadastroComClassePessoa\\AjudaCertaCadastro\\AjudaCertaCadastro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\AjudaCertaCadastro\\AjudaCertaCadastro\\AjudaCertaCadastro.csproj",
+        "projectUniqueName": "C:\\Projetos\\AjudaCertaTCC\\CadastroComClassePessoa\\AjudaCertaCadastro\\AjudaCertaCadastro.csproj",
         "projectName": "AjudaCertaCadastro",
-        "projectPath": "C:\\Projetos\\AjudaCertaCadastro\\AjudaCertaCadastro\\AjudaCertaCadastro.csproj",
+        "projectPath": "C:\\Projetos\\AjudaCertaTCC\\CadastroComClassePessoa\\AjudaCertaCadastro\\AjudaCertaCadastro.csproj",
         "packagesPath": "C:\\Users\\jvsrd\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\AjudaCertaCadastro\\AjudaCertaCadastro\\obj\\",
+        "outputPath": "C:\\Projetos\\AjudaCertaTCC\\CadastroComClassePessoa\\AjudaCertaCadastro\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

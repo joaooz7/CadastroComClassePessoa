@@ -1,4 +1,4 @@
-using AjudaCertaCadastro.ViewModels;
+using AjudaCertaCadastro.ViewModels.Usuarios;
 
 namespace AjudaCertaCadastro.Views.Usuarios;
 

@@ -20,7 +20,7 @@ namespace AjudaCertaCadastro.Services.Usuarios
         public async Task<Usuario> PostRegistrarUsuarioAsync(Usuario u)
         {
             string urlComplementar = "/Registrar";
-            u.Id = await _request.PostReturnIntAsync(apiUrlBase + urlComplementar, u);
+            u = await _request.PostAsync(apiUrlBase + urlComplementar, u, string.Empty);
             
             return u;
         }

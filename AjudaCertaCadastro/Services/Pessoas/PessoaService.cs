@@ -12,15 +12,17 @@ namespace AjudaCertaCadastro.Services.Pessoas
         private readonly Request _request;
         private const string apiUrlBase = "http://fuscatcc.somee.com/ApiAjudaCerta/Pessoas";
 
-        public PessoaService()
+        private string _token;
+        public PessoaService(string token)
         {
             _request = new Request();
+            _token = token;
         }
 
         public async Task<Pessoa> PostRegistrarPessoaAsync(Pessoa p)
         {
             string urlComplementar = "/Registrar";
-            p.Id = await _request.PostReturnIntAsync(apiUrlBase + urlComplementar, p);
+            p.Id = await _request.PostReturnIntAsync(apiUrlBase + urlComplementar, p, _token);
 
             return p;
         }

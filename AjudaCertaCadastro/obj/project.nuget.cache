@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L7b3I5RG6TZgqtIzoVREP9H5br+n/loCwwuuN8Ag3hVAkfk2FEAkCBB7WoBD9xYiYjpEOivQ6i147r6KL9qmjA==",
+  "dgSpecHash": "4YOzPYrZhV31c+3nDfqSfZ1zRZP2XpcsPSSIa9Vw7q7RRHyV9c2cbzAFwe9078BAiCZ86JKoQKjPWv1OMzZEmw==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\AjudaCertaCadastro\\AjudaCertaCadastro\\AjudaCertaCadastro.csproj",
+  "projectFilePath": "C:\\Projetos\\AjudaCertaTCC\\CadastroComClassePessoa\\AjudaCertaCadastro\\AjudaCertaCadastro.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jvsrd\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\jvsrd\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
