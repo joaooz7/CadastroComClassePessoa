@@ -212,7 +212,7 @@ namespace AjudaCertaCadastro.ViewModels.Usuarios
                 p.Nome = Nome;
                 p.Documento = Documento;
                 p.Telefone = Telefone;
-                p.DataNasc = Datanasc;
+                p.DataNasc = Convert.ToDateTime(Datanasc);
                 p.Genero = Genero;
                 p.Tipo = (TipoPessoaEnum)tipoPessoaSelecionado.Id;
                 p.fisicaJuridica = (FisicaJuridicaEnum)fisicaJuridicaSelecionado.Id;
