@@ -49,3 +49,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = AjudaCertaCadastro.Views.Usuarios.CadastroView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\CadastroView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\CadastroView.xaml
+
+[C:/Projetos/AjudaCertaTCC/CadastroComClassePessoa/AjudaCertaCadastro/Views/Usuarios/TelaInicialView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AjudaCertaCadastro.Views.Usuarios.TelaInicialView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\TelaInicialView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\TelaInicialView.xaml

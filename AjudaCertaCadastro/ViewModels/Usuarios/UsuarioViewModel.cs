@@ -2,6 +2,7 @@
 using AjudaCertaCadastro.Models.Enuns;
 using AjudaCertaCadastro.Services.Pessoas;
 using AjudaCertaCadastro.Services.Usuarios;
+using AjudaCertaCadastro.Views.Usuarios;
 using MvvmHelpers;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace AjudaCertaCadastro.ViewModels.Usuarios
         private PessoaService pService;
         public ICommand RegistrarUsuarioCommand { get; set; }
         public ICommand AutenticarCommand { get; set; }
+        public ICommand DirecionarCadastroCommand { get; set; }
         public UsuarioViewModel()
         {
             uService = new UsuarioService();
@@ -31,6 +33,7 @@ namespace AjudaCertaCadastro.ViewModels.Usuarios
         {
             RegistrarUsuarioCommand = new Command(async () => await RegistrarUsuario());
             AutenticarCommand = new Command(async () => await AutenticarUsuario());
+            DirecionarCadastroCommand = new Command(async () => await DirecionarParaCadastro());
         }
 
         #region AtributosPropriedades
@@ -271,6 +274,20 @@ namespace AjudaCertaCadastro.ViewModels.Usuarios
                     await Application.Current.MainPage
                         .DisplayAlert("Informação", "Dados incorretos :(", "Ok");
                 }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage
+                    .DisplayAlert("Informação", ex.Message + " Detalhes: " + ex.InnerException, "Ok");
+            }
+        }
+
+        public async Task DirecionarParaCadastro()
+        {
+            try
+            {
+                await Application.Current.MainPage
+                    .Navigation.PushAsync(new Views.Usuarios.CadastroView());
             }
             catch (Exception ex)
             {

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AjudaCertaCadastro.Views.Usuarios.CadastroView"
              Title="Cadastro - AjudaCerta"
+             NavigationPage.BackButtonTitle="true"
              >
     <VerticalStackLayout>
         <Label Text="Email" FontSize="Medium" />

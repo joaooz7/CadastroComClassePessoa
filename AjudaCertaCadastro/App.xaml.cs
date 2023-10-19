@@ -6,7 +6,7 @@
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Views.Usuarios.CadastroView());
+            MainPage = new NavigationPage(new Views.Usuarios.TelaInicialView());
         }
     }
 }
